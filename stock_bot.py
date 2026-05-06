@@ -32,16 +32,16 @@ STOP_LOSS             = 0.03
 MAX_OPEN_TRADES       = 5
 PAPER_TRADING         = True
 
-ALPACA_KEY    = os.getenv("ALPACA_API_KEY", "")
-ALPACA_SECRET = os.getenv("ALPACA_SECRET_KEY", "")
+ALPACA_KEY    = "PK4GYDUJPNGG6PJPAR326JXQ4V"
+ALPACA_SECRET = "EtMu7LxJrpkM2nypoZkwsF8pH71i87GGvaGTPxxfmKkS"
 
 if PAPER_TRADING:
     ALPACA_URL = "https://paper-api.alpaca.markets"
 else:
     ALPACA_URL = "https://api.alpaca.markets"
 
-TELEGRAM_TOKEN   = os.getenv("TELEGRAM_BOT_TOKEN", "")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+TELEGRAM_TOKEN   = "8608655894:AAF8rAsCBSWeGMhV9ALCQ17qO_ooSw7ISdU"
+TELEGRAM_CHAT_ID = "8773798653"
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
 
