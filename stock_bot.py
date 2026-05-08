@@ -6,7 +6,8 @@ import pandas as pd
 import requests
 import schedule
 import pytz
-
+import sys
+sys.stdout.flush()
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 CORE_WATCHLIST = [
@@ -26,10 +27,10 @@ PENNY_VOLUME_MULT     = 3.0
 PENNY_MIN_GAIN        = 5.0
 
 MAIN_TRADE_AMOUNT     = 100.00
-PENNY_TRADE_AMOUNT    = 50.00
-PROFIT_TARGET         = 0.07
-STOP_LOSS             = 0.03
-MAX_OPEN_TRADES       = 5
+PENNY_TRADE_AMOUNT    = 500.00
+PROFIT_TARGET         = 0.03
+STOP_LOSS             = 0.02
+MAX_OPEN_TRADES       = 6
 PAPER_TRADING         = True
 
 ALPACA_KEY    = "PK4GYDUJPNGG6PJPAR326JXQ4V"
@@ -355,6 +356,7 @@ def check_penny_stock(ticker, open_positions):
 # ── MAIN SCAN ─────────────────────────────────────────────────────────────────
 
 def scan():
+    sys.stdout.flush()
     if not is_market_hours():
         print("[" + now_pt().strftime("%H:%M") + " PT] Market closed — skipping scan.")
         return
@@ -392,7 +394,7 @@ def scan():
     if alerts_fired == 0:
         print("\n  No strong setups detected this scan.")
     print()
-
+    sys.stdout.flush()
 # ── ENTRY POINT ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
